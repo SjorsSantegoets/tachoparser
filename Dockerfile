@@ -34,7 +34,7 @@ COPY --from=gobuilder /lib/x86_64-linux-gnu/libpthread.so.0 /lib/x86_64-linux-gn
 COPY --from=gobuilder /lib/x86_64-linux-gnu/libm.so.6 /lib/x86_64-linux-gnu/
 # COPY --from=gobuilder /lib/x86_64-linux-gnu/libnss*.so.? /lib/x86_64-linux-gnu/
 COPY --from=gobuilder /etc/ssl/certs/* /etc/ssl/certs/
-COPY --from=gobuilder /usr/share/zoneinfo/* /usr/share/zoneinfo/
+# COPY --from=gobuilder /usr/share/zoneinfo/* /usr/share/zoneinfo/
 COPY --from=gobuilder /go/src/github.com/kyburz-switzerland-ag/tachoparser/cmd/dddserver/dddserver /dddserver
 ENTRYPOINT ["/dddserver"]
 CMD []
